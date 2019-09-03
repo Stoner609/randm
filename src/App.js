@@ -14,8 +14,8 @@ const App = (props) => {
           <p>Pick your favourite episodes</p>
         </div>
         <div>
-          <Link to="/">Home</Link>
-          <Link to="/faves">Favourite {state.favourites.length}</Link>
+          <Link style={{ margin: '10px'}} to="/">Home</Link>
+          <Link style={{ margin: '10px'}} to="/faves">Favourite {state.favourites.length}</Link>
         </div>
       </header>
       {props.children}
