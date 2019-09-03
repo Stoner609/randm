@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link } from 'react-router-dom';
+import { Store } from './store/Store';
 
-function App() {
+const App = (props) => {
+  const { state } = React.useContext(Store);
+  console.log(state);
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="header">
+        <div>
+          <h1>Rick and Morty</h1>
+          <p>Pick your favourite episodes</p>
+        </div>
+        <div>
+          <Link to="/">Home</Link>
+          <Link to="/faves">Favourite {state.favourites.length}</Link>
+        </div>
       </header>
-    </div>
+      {props.children}
+    </>
   );
 }
 
